@@ -34,7 +34,7 @@ function galleryItemsMarkUp(array) {
 
 galleryItemsMarkUp(galleryItems)
 
-const gallery = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250 })
+const gallery = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250, fadeSpeed: 350})
 
 
 function onImageClick(event) {
