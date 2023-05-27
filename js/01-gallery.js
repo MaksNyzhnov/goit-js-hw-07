@@ -36,7 +36,7 @@ galleryItemsMarkUp(galleryItems)
 
 function onImageClick(event) {
     event.preventDefault()
-    if (!event.target.nodeName === 'IMG') {
+    if (event.target.nodeName !== 'IMG') {
         return
     }
     const instance = basicLightbox.create(`<img src="${event.target.dataset.source}">`, {closable: true})

@@ -1,7 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-const galleryListEl = document.querySelector('.gallery')
+let galleryListEl = document.querySelector('.gallery')
 
 
 
@@ -34,21 +34,10 @@ function galleryItemsMarkUp(array) {
 
 galleryItemsMarkUp(galleryItems)
 
-const gallery = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250, fadeSpeed: 350})
+galleryListEl = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250, fadeSpeed: 350})
 
 
-function onImageClick(event) {
-    event.preventDefault()
-    if (!event.target.nodeName === 'IMG') {
-        return
-    }
-const backDropEl = document.querySelector('.sl-wrapper')
-        backDropEl.style.backgroundColor = "rgba(0, 0, 0, 0.6)"
-    gallery.open()
-}
-
-galleryListEl.addEventListener('click', onImageClick)
-
-console.log(gallery)
+const backDropEl = galleryListEl.domNodes.wrapper
+     backDropEl.style.backgroundColor = "rgba(0, 0, 0, 0.6)"
 
 
