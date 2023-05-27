@@ -39,7 +39,7 @@ function onImageClick(event) {
     if (!event.target.nodeName === 'IMG') {
         return
     }
-    const instance = basicLightbox.create(`<img src="${event.target.dataset.source}">`)
+    const instance = basicLightbox.create(`<img src="${event.target.dataset.source}">`, {closable: true})
     instance.show()
     
     
@@ -49,7 +49,7 @@ function onImageClick(event) {
     if (!event.code === "Escape") {
         return
     }
-        console.log('111')
+    
     instance.close()
     document.removeEventListener('keydown', onEscModalClose)
 }
