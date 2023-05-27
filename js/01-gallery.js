@@ -15,7 +15,7 @@ function galleryItemsMarkUp(array) {
         galleryItemEL.classList.add('gallery__item')
 
         galleryLinkEl.classList.add('gallery__link')
-        galleryLinkEl.href = item.preview
+        galleryLinkEl.href = item.original
 
         gelleryImageEl.classList.add('gallery__image')
         gelleryImageEl.dataset.source = item.original

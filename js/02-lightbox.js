@@ -18,7 +18,7 @@ function galleryItemsMarkUp(array) {
         galleryItemEL.classList.add('gallery__item')
 
         galleryLinkEl.classList.add('gallery__link')
-        galleryLinkEl.href = item.preview
+        galleryLinkEl.href = item.original
 
         gelleryImageEl.classList.add('gallery__image')
         gelleryImageEl.src = item.preview
@@ -34,14 +34,16 @@ function galleryItemsMarkUp(array) {
 
 galleryItemsMarkUp(galleryItems)
 
-const gallery = new SimpleLightbox('.gallery')
+const gallery = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250 })
+
 
 function onImageClick(event) {
     event.preventDefault()
     if (!event.target.nodeName === 'IMG') {
         return
     }
-
+const backDropEl = document.querySelector('.sl-wrapper')
+        backDropEl.style.backgroundColor = "rgba(0, 0, 0, 0.6)"
     gallery.open()
 }
 
